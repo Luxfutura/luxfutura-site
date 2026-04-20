@@ -14,10 +14,6 @@ box-sizing:border-box;
 }
 
 body{
--webkit-user-select:none;
--ms-user-select:none;
-user-select:none;
-  
 height:100vh;
 display:flex;
 justify-content:center;
@@ -27,6 +23,11 @@ font-family:Arial, sans-serif;
 color:white;
 text-align:center;
 padding:20px;
+
+-webkit-user-select:none;
+-ms-user-select:none;
+user-select:none;
+-webkit-touch-callout:none;
 }
 
 .container{
@@ -53,13 +54,14 @@ margin-bottom:20px;
 }
 
 a{
--webkit-user-select:text;
--ms-user-select:text;
-user-select:text;
-
 color:#66ccff;
 text-decoration:none;
 font-size:1rem;
+
+-webkit-user-select:text;
+-ms-user-select:text;
+user-select:text;
+cursor:pointer;
 }
 
 a:hover{
