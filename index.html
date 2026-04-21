@@ -73,12 +73,21 @@ a{
 color:#66ccff;
 text-decoration:none;
 font-size:1rem;
-
--webkit-user-select:text;
--ms-user-select:text;
-user-select:text;
 cursor:pointer;
 transition:0.2s ease;
+
+-webkit-user-select:none;
+-ms-user-select:none;
+user-select:none;
+
+-webkit-tap-highlight-color: transparent;
+outline:none;
+}
+
+a:focus,
+a:active,
+a:visited{
+outline:none;
 }
 
 a:hover{
@@ -120,7 +129,7 @@ font-size:0.95rem;
 
 <div class="tagline">Tech for a Better Future</div>
 
-<div class="areas">AI • Sustainability • Automation • Energy</div>
+<div class="areas">AI • Energy • Environment • Automation</div>
 
 <div class="sub">Launching Soon</div>
 
