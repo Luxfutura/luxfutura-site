@@ -217,6 +217,13 @@ h1{
             btn.innerText = "Notify me at launch";
         }
     };
+
+    btn.addEventListener('touchstart', () => {
+        // Kollar om telefonen stödjer vibration
+        if (navigator.vibrate) {
+            navigator.vibrate(15); // Ett extremt kort "tick"
+        }
+    });
 </script>
 
 </body>
