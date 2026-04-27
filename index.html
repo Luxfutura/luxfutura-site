@@ -158,6 +158,18 @@ h1{
     letter-spacing:0.4px;
 }
 
+.email-input, .submit-btn {
+    -webkit-touch-callout: none; /* Inaktiverar systemmenyn på iOS */
+    -webkit-user-select: none;   /* Safari */
+    user-select: none;           /* Standard */
+}
+
+/* Vi vill dock att man ska kunna skriva i fältet, så vi återställer select för text */
+.email-input {
+    user-select: text; 
+    -webkit-user-select: text;
+}
+
 @media (max-width:600px){
     h1{ font-size:2.7rem; }
     .tagline{ font-size:1.1rem; }
@@ -175,8 +187,18 @@ h1{
     <div class="sub">Launching May 2026</div>
 
     <form id="signup-form">
-        <input type="email" id="email" class="email-input" placeholder="Your email address" required>
-        <button type="submit" class="submit-btn" id="btn">Notify me at launch</button>
+        <input 
+            type="email" 
+            id="email" 
+            class="email-input" 
+            placeholder="Your email address" 
+            required 
+            autocomplete="off" 
+            spellcheck="false" 
+            autocorrect="off"
+            oncontextmenu="return false;"
+        >
+        <button type="submit" class="submit-btn" id="btn" oncontextmenu="return false;">Notify me at launch</button>
         <p id="response-msg" style="display:none;"></p>
     </form>
 
@@ -221,6 +243,9 @@ h1{
             btn.innerText = "Notify me at launch";
         }
     };
+
+    // Blockera högerklick på hela sidan
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
     btn.addEventListener('touchstart', () => {
         // Kollar om telefonen stödjer vibration
